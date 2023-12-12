@@ -6,12 +6,12 @@ import "./style.css";
 const book1 = {
   title: "The Shadows Work Journal",
   author: "kella Shaheen",
-  img: "./images/book1.png",
+  img: "./images/book-1.jpg",
 };
 
 // book2
 const book2 = {
-  title: "ourth-Wing-Empyrean",
+  title: "Ourth-Wing-Empyrean",
   author: "Rebecca-Yarros",
   img: "./images/book-2.jpg",
 };
@@ -25,21 +25,21 @@ const book3 = {
 
 function BookList() {
   return (
-    <section className="booklist">
-      <Book img={book1.img} author={book1.author} title={book1.title}>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Et recusandae
-          eaque minima, ad itaque amet quibusdam, consequuntur sint culpa sed
-          ratione. Impedit, adipisci. Libero sequi quisquam dolor sint, sed
-          tempore.
-          <button>Click ME</button>
-        </p>
-      </Book>
-      <Book img={book2.img} author={book2.author} title={book2.title} />
-      <Book img={book3.img} author={book3.author} title={book3.title} />
-    </section>
+    <>
+      <header>
+        <Heading />
+      </header>
+      <section className="booklist">
+        <Book img={book1.img} author={book1.author} title={book1.title} />
+        <Book img={book2.img} author={book2.author} title={book2.title} />
+        <Book img={book3.img} author={book3.author} title={book3.title} />
+      </section>
+    </>
   );
 }
+const Heading = () => {
+  return <div className="heading">Best Seller Books</div>;
+};
 
 const Book = ({ img, author, title, children }) => {
   return (
@@ -52,6 +52,7 @@ const Book = ({ img, author, title, children }) => {
         >
           {author}
         </h4>
+        {children}
       </article>
     </>
   );
